@@ -1,0 +1,158 @@
+{
+	"info": {
+		"_postman_id": "f45fc54c-7afb-41fc-bcd5-ebb0bedaf808",
+		"name": "DB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User & Auth",
+			"item": [
+				{
+					"name": "Sign Up User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Parveen Kumar\",\r\n    \"email\":\"praveent696@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_ENDPOINT}}/api/users",
+							"host": [
+								"{{API_ENDPOINT}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"praveent696@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_ENDPOINT}}/api/auth",
+							"host": [
+								"{{API_ENDPOINT}}"
+							],
+							"path": [
+								"api",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Token refresh",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjAxY2Y2N2JlOTk4ZTIyYTNjYTc5MWZmIn0sImlhdCI6MTYxMjUxMTA4MiwiZXhwIjoxNjEyNTEyMjgyfQ.eE8pM_Kko8QxU7RO3BeTcRemsUA1XgvE7vdxleFN_qM",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjAxY2Y2N2JlOTk4ZTIyYTNjYTc5MWZmIn0sImlhdCI6MTYxMjUxMTAyOH0.X_fVxiqpNbXM2t4A5zAvWl_-S-W23-9DCZ7kKmkfDzI\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_ENDPOINT}}/api/auth/token_refresh",
+							"host": [
+								"{{API_ENDPOINT}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"token_refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjAxY2Y2N2JlOTk4ZTIyYTNjYTc5MWZmIn0sImlhdCI6MTYxMjUxMzQzNCwiZXhwIjoxNjEyNTE0NjM0fQ.F96xSd2aTyuQiMY8W9pMtkU6MxmbJCPjRE8A52POf7M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{API_ENDPOINT}}/api/auth/logout",
+							"host": [
+								"{{API_ENDPOINT}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post",
+			"item": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "API_ENDPOINT",
+			"value": "http://localhost:5000"
+		}
+	]
+}
