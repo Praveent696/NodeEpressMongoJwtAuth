@@ -1,0 +1,5 @@
+{
+    "mongoDBConnString" : "YOUR_CONN_STRING",
+    "jwtTokenSecureKey" : "YOURJWTSECUREKEY",
+    "jwtRefreshTokenSecureKey" : "YOURJWTREFRESHTOKENSECUREKEY"
+}
